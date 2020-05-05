@@ -1,0 +1,25 @@
+Divide and conquer is a strategical approach to solve a main problem by solving its sub problem and combining the
+solution of all sub problems to get the solution of tha main problem.
+
+DAC(problem){
+    if(sub_problem_solvable){
+        return solution_of_sub_problem
+    } else {
+        divide_main_problem_to_sub_problem by p1, p2, p3, p4 ... pk
+        apply DAC(p1), DAC(p2), ... DAC(pk)
+        combine (DAC(p1), DAC(p2), ... DAC(pk)) for_the_main_problem_solution
+    }
+}
+
+These kind of problems are recursive in nature.
+Major recursive algorithm problems are;
+
+1. Binary Search
+2. Tower of Hanoi
+3. Finding Maximum and Minimum
+4. Quick Sort
+5. Merge Sort
+6. Strassen's Matrix multiplication
+7. Palindrome
+8. Factorial etc...
+
