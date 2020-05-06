@@ -14,16 +14,14 @@ package binarysearch;
 * time taken to find an element in minimum possible is O(1) and maximum O(log n)
 * */
 
+import datautils.InputUtils;
+
 public class BinarySearchIterative {
 
-    int[] elements = {1,2,3,4,5,6,7,8,9,10,11,12,13,14,15};
-    int keyToFound1 = 6;
-    int keyToFound2 = 23;
-
     public BinarySearchIterative(){
-        findIndexOfElementInArray(elements,keyToFound1);
+        findIndexOfElementInArray(InputUtils.sortedArray,InputUtils.arrayKeyToBeFound1);
         System.out.println("**********************************************************************");
-        findIndexOfElementInArray(elements,keyToFound2);
+        findIndexOfElementInArray(InputUtils.sortedArray,InputUtils.arrayKeyToBeFound2);
     }
 
     public void findIndexOfElementInArray(int[] arr, int key){

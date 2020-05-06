@@ -1,8 +1,8 @@
-import binarysearch.BinarySearchIterative;
+import binarysearch.BinarySearchRecursive;
 
 public class DSAlgorithmMainClass {
 
     public static void main(String[] args){
-        new BinarySearchIterative();
+        new BinarySearchRecursive();
     }
 }
