@@ -1,0 +1,26 @@
+Heap is a complete binary tree
+
+Max Heap - Here the highest element is placed at the root and all other child or successive descendants
+are in decreasing value
+
+Min Heap - The smallest element will be placed in the root and all other child or successive descendants
+are in increasing value
+
+***************************
+
+Heap Sort
+
+2 steps to follow
+
+1) create the heap with the given elements
+2) delete the heap to get a sorted array, by filling the empty memory with the deleted item
+
+
+************************************8
+
+Heapify
+
+Process of creating a heap
+
+
+
