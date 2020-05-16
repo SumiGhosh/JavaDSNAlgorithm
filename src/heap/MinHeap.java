@@ -12,13 +12,13 @@ Below shows indexes of other nodes for the ith node, i.e., Arr[i]:
 import java.util.Arrays;
 import java.util.NoSuchElementException;
 
-public class MaxHeap {
+public class MinHeap {
 
     private int heapCapacity;
     private int size;
     private int[] heap;
 
-    public MaxHeap(int heapCapacity){
+    public MinHeap(int heapCapacity) {
         this.heapCapacity = heapCapacity;
         heap = new int[heapCapacity];
     }
@@ -32,7 +32,7 @@ public class MaxHeap {
         return heap[0];
     }
 
-    /*Removes the maximum element from MaxHeap. Time Complexity of this Operation is O(log n)
+    /*Removes the maximum element from MaxHeap. Time Complexity of this Operation is O(Logn)
     as this operation needs to maintain the heap property (by calling heapify()) after removing root
     */
     public void poll() {
@@ -48,23 +48,23 @@ public class MaxHeap {
     private void heapifyDown() {
         int index = 0;
         while (hasLeftChild(index)) {
-            int greatestIndexedValue = getLeftChildIndex(index);
+            int smallIndexValue = getLeftChildIndex(index);
 
-            if (hasRightChild(index) && heap[getRightChildIndex(index)] > heap[getLeftChildIndex(index)]) {
-                greatestIndexedValue = getRightChildIndex(index);
+            if (hasRightChild(index) && getRightChildIndex(index) < getLeftChildIndex(index)) {
+                smallIndexValue = getRightChildIndex(index);
             }
 
-            if (heap[index] < heap[greatestIndexedValue]) {
-                swapIndex(index, greatestIndexedValue);
+            if (heap[index] > heap[smallIndexValue]) {
+                swapIndex(index, smallIndexValue);
             } else {
                 break;
             }
 
-            index = greatestIndexedValue;
+            index = smallIndexValue;
         }
     }
 
-    /*Inserting a new key takes O(log n) time. We add a new key at the end of the tree.
+    /*Inserting a new key takes O(Logn) time. We add a new key at the end of the tree.
     IF new key is smaller than its parent, then we don’t need to do anything.
     Otherwise, we need to traverse up to fix the violated heap property.
     */
@@ -78,10 +78,9 @@ public class MaxHeap {
 
     private void heapifyUp() {
         int index = size - 1;
-        while (hasParent(index) && getParent(index) < heap[index]) {
+        while (hasParent(index) && getParent(index) > heap[index]) {
             swapIndex(getParentIndex(index), index);
             index = getParentIndex(index);
-
         }
     }
 
@@ -92,39 +91,39 @@ public class MaxHeap {
         }
     }
 
-    public int getLeftChildIndex(int parentIndex){
-        return 2*parentIndex + 1;
+    public int getLeftChildIndex(int parentIndex) {
+        return 2 * parentIndex + 1;
     }
 
-    public int getRightChildIndex(int parentIndex){
-        return 2*parentIndex + 2;
+    public int getRightChildIndex(int parentIndex) {
+        return 2 * parentIndex + 2;
     }
 
-    public int getParentIndex(int childIndex){
-        return (childIndex - 1)/2;
+    public int getParentIndex(int childIndex) {
+        return (childIndex - 1) / 2;
     }
 
-    public boolean hasLeftChild(int nodeIndex){
+    public boolean hasLeftChild(int nodeIndex) {
         return getLeftChildIndex(nodeIndex) < size;
     }
 
-    public boolean hasRightChild(int nodeIndex){
+    public boolean hasRightChild(int nodeIndex) {
         return getRightChildIndex(nodeIndex) > size;
     }
 
-    public boolean hasParent(int childIndex){
+    public boolean hasParent(int childIndex) {
         return getParentIndex(childIndex) >= 0;
     }
 
-    private int getLeftChild(int parentIndex){
+    private int getLeftChild(int parentIndex) {
         return heap[getLeftChildIndex(parentIndex)];
     }
 
-    private int getRightChild(int parentIndex){
+    private int getRightChild(int parentIndex) {
         return heap[getRightChildIndex(parentIndex)];
     }
 
-    private int getParent(int childIndex){
+    private int getParent(int childIndex) {
         return heap[getParentIndex(childIndex)];
     }
 
