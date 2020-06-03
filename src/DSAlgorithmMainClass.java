@@ -1,5 +1,4 @@
-import datautils.InputUtils;
-import greedy.JobScheduleDeadlineGreedyExample;
+import greedy.OptimalMergePattern;
 
 public class DSAlgorithmMainClass {
 
@@ -14,14 +13,17 @@ public class DSAlgorithmMainClass {
         maxHeap.add(19);
         maxHeap.add(6);
         maxHeap.add(22);
-        maxHeap.add(9);*/
-        // maxHeap.printHeapArray();
+        maxHeap.add(9);
+        maxHeap.printHeapArray();*/
 
         /*maxHeap.poll();
         maxHeap.printHeapArray();*/
 
         //new KnapsackGreedyExample(InputUtils.profitArray,InputUtils.weightArray,InputUtils.maxCapacity);
-        new JobScheduleDeadlineGreedyExample(InputUtils.jobIds1, InputUtils.deadlines1, InputUtils.jobProfits1);
-        new JobScheduleDeadlineGreedyExample(InputUtils.jobIds2, InputUtils.deadlines2, InputUtils.jobProfits2);
+        //new JobScheduleDeadlineGreedyExample(InputUtils.jobIds1, InputUtils.deadlines1, InputUtils.jobProfits1);
+        //new JobScheduleDeadlineGreedyExample(InputUtils.jobIds2, InputUtils.deadlines2, InputUtils.jobProfits2);
+
+        int files[] = {2, 3, 4, 5, 6, 7};
+        new OptimalMergePattern(6, files);
     }
 }

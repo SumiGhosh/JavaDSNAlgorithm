@@ -36,9 +36,9 @@ import java.util.Arrays;
 
 public class JobScheduleDeadlineGreedyExample {
 
-    String[] jobIds = {"a", "b", "c", "d"};
-    int[] deadlines = {4, 1, 1, 1};
-    int[] jobProfits = {20, 10, 40, 30};
+    String[] jobIds;
+    int[] deadlines;
+    int[] jobProfits;
     JobDetail[] availableJobs;
 
     public JobScheduleDeadlineGreedyExample(String[] jobIds, int[] deadlines, int[] jobProfits) {

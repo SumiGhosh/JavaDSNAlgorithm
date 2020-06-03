@@ -35,14 +35,16 @@ public class MinHeap {
     /*Removes the maximum element from MaxHeap. Time Complexity of this Operation is O(Logn)
     as this operation needs to maintain the heap property (by calling heapify()) after removing root
     */
-    public void poll() {
+    public int poll() {
         if (size == 0) {
             throw new NoSuchElementException();
         }
 
+        int nodeValue = heap[0];
         heap[0] = heap[size - 1];
         size--;
         heapifyDown();
+        return nodeValue;
     }
 
     private void heapifyDown() {
@@ -137,5 +139,9 @@ public class MinHeap {
         for (int index = 0; index < size; index++) {
             System.out.print(" " + heap[index]);
         }
+    }
+
+    public int getSize() {
+        return size;
     }
 }
