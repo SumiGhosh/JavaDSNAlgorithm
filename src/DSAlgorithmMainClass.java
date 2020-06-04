@@ -1,4 +1,4 @@
-import greedy.OptimalMergePattern;
+import greedy.HuffmanCoding;
 
 public class DSAlgorithmMainClass {
 
@@ -23,7 +23,11 @@ public class DSAlgorithmMainClass {
         //new JobScheduleDeadlineGreedyExample(InputUtils.jobIds1, InputUtils.deadlines1, InputUtils.jobProfits1);
         //new JobScheduleDeadlineGreedyExample(InputUtils.jobIds2, InputUtils.deadlines2, InputUtils.jobProfits2);
 
-        int files[] = {2, 3, 4, 5, 6, 7};
-        new OptimalMergePattern(6, files);
+        //int files[] = {2, 3, 4, 5, 6, 7};
+        //new OptimalMergePattern(6, files);
+
+        char[] message = {'a', 'b', 'c', 'd', 'e', 'f'};
+        int[] frequency = {5, 9, 12, 13, 16, 45};
+        new HuffmanCoding(message, frequency);
     }
 }
